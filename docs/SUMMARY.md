@@ -2,7 +2,8 @@
 
 * [Welcome](README.md)
 
-    * [0.1. Best Practices]()
+    * [0.1. Foreword](welcome/foreword.md)
+    * [0.2. Best Practices]()
 
 * [1. Organization]()
 

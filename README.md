@@ -1,29 +1,15 @@
-# telr.exchange
+# Welcome to the TelrExchange Documenation
 
-## Project setup
-```
-yarn install
-```
+![TelrExchange](https://telr.exchange/poster.jpg?1583883274)
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+Website: __https://telr.exchange__
 
-### Compiles and minifies for production
-```
-yarn build
-```
+Documentation: __https://docs.telr.exchange__
 
-### Run your unit tests
-```
-yarn test:unit
-```
+Source: __https://github.com/modenero/telr.exchange__
 
-### Lints and fixes files
-```
-yarn lint
-```
+---
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+__TelrExchange is an attempt to create a peaceful, peer-to-peer token exchange; with the primary purpose of attracting users from distant blockchains to the Bitcoin Cash community.__
+
+---

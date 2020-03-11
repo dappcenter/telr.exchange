@@ -68,6 +68,13 @@
                         <!-- separator -->
                         <li role="separator" class="dropdown-divider"></li>
 
+                        <li class="dropdown-item btn text-primary">
+                            Spice <small><small class="text-muted">[ <span class="text-primary">SPICE</span> ]</small></small>
+                        </li>
+
+                        <!-- separator -->
+                        <li role="separator" class="dropdown-divider"></li>
+
                         <li class="dropdown-item btn text-primary text-center">
                             Load more coins &amp; tokens...
                         </li>
