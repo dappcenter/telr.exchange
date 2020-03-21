@@ -1,6 +1,6 @@
 <template>
-    <nav class="navbar navbar-light navbar-expand-lg">
-        <a class="navbar-brand text-primary" href="https://telr.exchange">
+    <nav class="navbar navbar-light bg-light navbar-expand-lg">
+        <a class="navbar-brand text-primary" href="/">
             Telr<span class="text-info">Exchange</span>
         </a>
 
@@ -11,20 +11,24 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-divider"></li>
+
                 <li class="theme-selector nav-item">
-                    <a class="nav-link" href="javascript://" onclick="document.querySelector(&#39;body&#39;).classList.remove(&#39;light&#39;); document.querySelector(&#39;body&#39;).classList.add(&#39;dark&#39;);">
+                    <a class="nav-link" href="javascript://" onclick="document.querySelector('body').classList.remove('light'); document.querySelector('body').classList.add('dark');">
                         <i class="fa fa-square" aria-hidden="true"></i>
                     </a>
 
-                    <a class="nav-link" href="javascript://" onclick="document.querySelector(&#39;body&#39;).classList.remove(&#39;dark&#39;); document.querySelector(&#39;body&#39;).classList.add(&#39;light&#39;);">
+                    <a class="nav-link" href="javascript://" onclick="document.querySelector('body').classList.remove('dark'); document.querySelector('body').classList.add('light');">
                         <i class="far fa-square" aria-hidden="true"></i>
                     </a>
                 </li>
+
                 <li class="nav-divider"></li>
+
                 <li class="nav-item dropdown" id="tokensDropdown">
-                    <a href="javascript://#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <a href="javascript://" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         Bai Stablecoin (BAI)&nbsp;
                     </a>
+
                     <ul class="dropdown-menu">
                         <li>
                             <form>
@@ -36,11 +40,8 @@
                         <li role="separator" class="dropdown-divider"></li>
 
                         <li>
-                            <h5 class="text-center text-info">Featured</h5>
+                            <h5 class="text-center text-info">Featured Tokens</h5>
                         </li>
-
-                        <!-- separator -->
-                        <li role="separator" class="dropdown-divider"></li>
 
                         <li class="dropdown-item btn text-primary">
                             Bai Stablecoin <small><small class="text-muted">[ <span class="text-primary">BAI</span> ]</small></small>
@@ -50,8 +51,16 @@
                             Dai Stablecoin <small><small class="text-muted">[ <span class="text-primary">DAI</span> ]</small></small>
                         </li>
 
+                        <li class="dropdown-item btn text-primary">
+                            Spice <small><small class="text-muted">[ <span class="text-primary">SPICE</span> ]</small></small>
+                        </li>
+
                         <!-- separator -->
                         <li role="separator" class="dropdown-divider"></li>
+
+                        <li>
+                            <h5 class="text-center text-info">Featured Coins</h5>
+                        </li>
 
                         <li class="dropdown-item btn text-primary">
                             Bitcoin Cash <small><small class="text-muted">[ <span class="text-primary">BCH</span> ]</small></small>
@@ -68,14 +77,7 @@
                         <!-- separator -->
                         <li role="separator" class="dropdown-divider"></li>
 
-                        <li class="dropdown-item btn text-primary">
-                            Spice <small><small class="text-muted">[ <span class="text-primary">SPICE</span> ]</small></small>
-                        </li>
-
-                        <!-- separator -->
-                        <li role="separator" class="dropdown-divider"></li>
-
-                        <li class="dropdown-item btn text-primary text-center">
+                        <li class="dropdown-item btn text-primary text-center" data-toggle="modal" data-target="#exampleModal">
                             Load more coins &amp; tokens...
                         </li>
 
@@ -90,6 +92,7 @@
                 <li class="nav-item dropdown">
                     <a href="javascript://" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <i class="far fa-user-circle"></i> <span>My Account</span></a>
+
                     <ul class="dropdown-menu dropdown-menu-right">
                         <li class="active dropdown-item"><a href="javascript://">{{profileAddress}}&nbsp;<span class="badge badge-dark">0.013 BCH</span>&nbsp;<span class="badge badge-success">MetaMask</span></a></li>
                         <li role="separator" class="dropdown-divider"></li>
@@ -101,14 +104,17 @@
                         <li class="dropdown-item btn text-info"><i class="fa fa-fw fa-plug"></i> Connect Trezor <small><small class="text-danger">(Hardware Wallet)</small></small></li>
                     </ul>
                 </li>
+
                 <li class="nav-item">
                     <a href="javascript://" class="nav-link text-primary" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-external-link-alt"></i> <span>Token Info</span></a>
                 </li>
+
                 <li class="nav-item dropdown">
                     <a href="javascript://" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-language"></i> English
                     </a>
+
                     <ul class="dropdown-menu dropdown-menu-right">
                         <li class="dropdown-item"><a href="javascript://"><span>English</span></a></li>
                         <li class="dropdown-item"><span class="text-muted">中文</span></li>
@@ -117,6 +123,7 @@
                         <li class="dropdown-item"><span class="text-muted">русский</span></li>
                     </ul>
                 </li>
+
                 <li class="nav-item dropdown">
                     <a href="javascript://" class="nav-link text-danger" data-toggle="dropdown" role="button" aria-haspopup="true" data-offset="50,50" aria-expanded="false">
                         <i class="far fa-life-ring"></i>&nbsp;<span>Need Help?</span>
@@ -135,14 +142,69 @@
                 </li>
             </ul>
         </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        ...
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
 </template>
 
 <script>
+/* Initialize vuex. */
+import { mapActions, mapGetters, mapState } from 'vuex'
+
 export default {
     props: {
         // msg: String
-    }
+    },
+    computed: {
+        ...mapState({
+            profileAddress: state => state.profileAddress,
+        }),
+
+        ...mapGetters({
+            //
+        }),
+    },
+    methods: {
+        ...mapActions({
+            //
+        }),
+
+        connectMetamask() {
+            console.log('TODO: connect metamast')
+        },
+
+        signTrade() {
+            console.log('TODO: sign trade')
+        },
+
+    },
+    created: function () {
+        //
+    },
+    mounted: function () {
+        //
+    },
 }
 </script>
 

@@ -28,7 +28,18 @@
 export default {
     props: {
         // msg: String
-    }
+    },
+    data: () => {
+        return {
+            orders: []
+        }
+    },
+    created: function () {
+        //
+    },
+    mounted: function () {
+        //
+    },
 }
 </script>
 

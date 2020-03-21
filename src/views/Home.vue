@@ -33,6 +33,9 @@
 </template>
 
 <script>
+/* Initialize vuex. */
+import { mapActions, mapGetters, mapState } from 'vuex'
+
 /* Import components. */
 import Balance from '@/components/Balance.vue'
 import Navbar from '@/components/Navbar.vue'
@@ -60,9 +63,6 @@ export default {
             appTitle: 'TelrExchange',
             appDesc: 'The Official Bitcoin (DEX) Decentralized Exchange',
 
-            /* Profile Summary */
-            profileAddress: 'n/a',
-
             /* Blockchain Summary */
             // anameTelr: '0x0',
             // anameTelr: '0x0',
@@ -73,10 +73,20 @@ export default {
         }
     },
     computed: {
-        // TODO
+        ...mapState({
+            // val: state => state.val,
+        }),
+
+        ...mapGetters({
+            //
+        }),
     },
     methods: {
-        _init () {
+        ...mapActions({
+            //
+        }),
+
+        init () {
             console.info('App has loaded successfully!') // eslint-disable-line no-console
 
             /* Initialize Ethereum provider. */
@@ -94,7 +104,7 @@ export default {
     },
     mounted: function () {
         /* Initialize application. */
-        // this._init()
+        // this.init()
     },
 }
 </script>
