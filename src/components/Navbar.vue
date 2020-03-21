@@ -4,7 +4,8 @@
             Telr<span class="text-info">Exchange</span>
         </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> -->
+        <button class="navbar-toggler" type="button" data-toggle="modal" data-target="#mobileModal" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -51,10 +52,6 @@
                             Dai Stablecoin <small><small class="text-muted">[ <span class="text-primary">DAI</span> ]</small></small>
                         </li>
 
-                        <li class="dropdown-item btn text-primary">
-                            Spice <small><small class="text-muted">[ <span class="text-primary">SPICE</span> ]</small></small>
-                        </li>
-
                         <!-- separator -->
                         <li role="separator" class="dropdown-divider"></li>
 
@@ -77,12 +74,12 @@
                         <!-- separator -->
                         <li role="separator" class="dropdown-divider"></li>
 
-                        <li class="dropdown-item btn text-primary text-center" data-toggle="modal" data-target="#exampleModal">
+                        <li class="dropdown-item btn text-primary text-center" data-toggle="modal" data-target="#loadMoreModal">
                             Load more coins &amp; tokens...
                         </li>
 
-                        <li class="dropdown-item btn text-primary text-center">
-                            Add a custom token?
+                        <li class="dropdown-item btn text-primary text-center" data-toggle="modal" data-target="#customAssetModal">
+                            Add a custom asset?
                         </li>
                     </ul>
                 </li>
@@ -143,28 +140,94 @@
             </ul>
         </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- Load More Modal -->
+        <div class="modal fade" id="loadMoreModal" tabindex="-1" role="dialog" aria-labelledby="loadMoreModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title text-info" id="loadMoreModalLabel">Coins &amp; Tokens</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
 
                     <div class="modal-body">
-                        ...
+
+                        <ul>
+                            <li class="dropdown-item btn text-primary">
+                                HonestCoin <small><small class="text-muted">[ <span class="text-primary">USDH</span> ]</small></small>
+                            </li>
+                            <li class="dropdown-item btn text-primary">
+                                Spice <small><small class="text-muted">[ <span class="text-primary">SPICE</span> ]</small></small>
+                            </li>
+                        </ul>
+
                     </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Custom Asset Modal -->
+        <div class="modal fade" id="customAssetModal" tabindex="-1" role="dialog" aria-labelledby="customAssetModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-info" id="customAssetModalLabel">Custom Assets</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <p class="text-secondary">
+                            Adding a custom asset for trading is very simple.
+                        </p>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Modal -->
+        <div class="modal fade" id="mobileModal" tabindex="-1" role="dialog" aria-labelledby="mobileModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-info" id="mobileModalLabel">Mobile Support</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <p class="text-secondary">
+                            TelrExchange is <strong>NOT</strong> currently optimized for phones and tablets.
+                            Our team is working hard to make this availalbe soonish'.
+                        </p>
+
+                        <p class="text-secondary">
+                            We currently recommend that you use a desktop browser like <strong>Brave or Chrome,</strong> with the <strong>Badger or MetaMask</strong> plugin.
+                        </p>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Okay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </nav>
 </template>
 
