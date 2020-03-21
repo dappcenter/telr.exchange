@@ -91,20 +91,52 @@
                         <i class="far fa-user-circle"></i> <span>My Account</span></a>
 
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li class="active dropdown-item"><a href="javascript://">{{profileAddress}}&nbsp;<span class="badge badge-dark">0.013 BCH</span>&nbsp;<span class="badge badge-success">MetaMask</span></a></li>
-                        <li role="separator" class="dropdown-divider"></li>
-                        <li class="dropdown-item btn text-info"><i class="fa fa-fw fa-piggy-bank"></i> Deposit <small><small class="text-danger">(Telr Wallet)</small></small></li>
-                        <li class="dropdown-item btn text-info"><i class="fa fa-fw fa-money-check-alt"></i> Withdraw <small><small class="text-danger">(Telr Wallet)</small></small></li>
-                        <li class="dropdown-item btn text-info" @click="signTrade"><i class="fa fa-fw fa-plug"></i> Sign Telr <small><small class="text-danger">(Telr DEX)</small></small></li>
-                        <li class="dropdown-item btn text-info" @click="connectMetamask"><i class="fa fa-fw fa-plug"></i> Connect Metamask <small><small class="text-danger">(Web Wallet)</small></small></li>
-                        <li class="dropdown-item btn text-info"><i class="fa fa-fw fa-plug"></i> Connect Ledger Nano S <small><small class="text-danger">(Hardware Wallet)</small></small></li>
-                        <li class="dropdown-item btn text-info"><i class="fa fa-fw fa-plug"></i> Connect Trezor <small><small class="text-danger">(Hardware Wallet)</small></small></li>
-                    </ul>
-                </li>
+                        <li class="dropdown-item">
+                            <a href="javascript://">
+                                <span class="badge badge-success">Badger</span>
 
-                <li class="nav-item">
-                    <a href="javascript://" class="nav-link text-primary" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-external-link-alt"></i> <span>Token Info</span></a>
+                                <strong class="text-info">&nbsp; &nbsp; {{profileAddress}}</strong>
+
+                                <span class="text-muted">&nbsp; &middot; &middot; &nbsp;</span>
+
+                                <span class="badge badge-dark">0.013 BCH</span>
+                            </a>
+                        </li>
+
+                        <!-- separator -->
+                        <li role="separator" class="dropdown-divider"></li>
+
+                        <li class="dropdown-item btn text-info">
+                            <i class="fa fa-fw fa-piggy-bank"></i>
+                            Make a Deposit <small><small class="text-danger">(Telr Wallet)</small></small>
+                        </li>
+
+                        <li class="dropdown-item btn text-info">
+                            <i class="fa fa-fw fa-money-check-alt"></i>
+                            Withdraw Funds <small><small class="text-danger">(Telr Wallet)</small></small>
+                        </li>
+
+                        <!-- separator -->
+                        <li role="separator" class="dropdown-divider"></li>
+
+                        <li class="dropdown-item btn text-info" @click="connectBadger">
+                            <i class="fa fa-fw fa-plug"></i>
+                            Connect Badger <small><small class="text-danger">(Plugin Wallet)</small></small>
+                        </li>
+
+                        <li class="dropdown-item btn text-info" @click="connectMetamask">
+                            <i class="fa fa-fw fa-plug"></i>
+                            Connect MetaMask <small><small class="text-danger">(Plugin Wallet)</small></small>
+                        </li>
+
+                        <!-- separator -->
+                        <li role="separator" class="dropdown-divider"></li>
+
+                        <li class="dropdown-item btn text-info">
+                            <i class="fa fa-fw fa-plug"></i>
+                            Connect Ledger <small><small class="text-danger">(Hardware Wallet)</small></small>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="nav-item dropdown">
@@ -113,11 +145,25 @@
                     </a>
 
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li class="dropdown-item"><a href="javascript://"><span>English</span></a></li>
-                        <li class="dropdown-item"><span class="text-muted">中文</span></li>
-                        <li class="dropdown-item"><span class="text-muted">Español</span></li>
-                        <li class="dropdown-item"><span class="text-muted">한국어</span></li>
-                        <li class="dropdown-item"><span class="text-muted">русский</span></li>
+                        <li class="dropdown-item">
+                            <a href="javascript://"><span>English</span></a>
+                        </li>
+
+                        <li class="dropdown-item">
+                            <a href="javascript://"><span class="text-muted">中文</span></a>
+                        </li>
+
+                        <li class="dropdown-item">
+                            <a href="javascript://"><span class="text-muted">Español</span></a>
+                        </li>
+
+                        <li class="dropdown-item">
+                            <a href="javascript://"><span class="text-muted">한국어</span></a>
+                        </li>
+
+                        <li class="dropdown-item">
+                            <a href="javascript://"><span class="text-muted">русский</span></a>
+                        </li>
                     </ul>
                 </li>
 
@@ -125,16 +171,29 @@
                     <a href="javascript://" class="nav-link text-danger" data-toggle="dropdown" role="button" aria-haspopup="true" data-offset="50,50" aria-expanded="false">
                         <i class="far fa-life-ring"></i>&nbsp;<span>Need Help?</span>
                     </a>
+
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li class="dropdown-item"><a href="http://riot.im/app" target="_blank"><i class="far fa-fw fa-comment" aria-hidden="true"></i> <span>[ Matrix ]</span></a></li>
-                        <li class="dropdown-item"><a href="https://www.reddit.com/r/TelrExchange" target="_blank"><i class="fab fa-fw fa-reddit-alien" aria-hidden="true"></i> Reddit</a></li>
                         <li class="dropdown-item">
-                            <a href="https://ropsten.etherscan.io/address/#code" target="_blank">
-                                <i class="far fa-fw fa-file-alt" aria-hidden="true"></i>
-                                Contract 0xEb3D8484D7..
-                                <small class="text-success">(Latest 2019.03.12)</small>
+                            <a href="https://www.reddit.com/r/Telr" target="_blank">
+                                <i class="fab fa-fw fa-reddit-alien" aria-hidden="true"></i>
+                                Reddit
                             </a>
                         </li>
+
+                        <li class="dropdown-item">
+                            <a href="http://riot.im/app" target="_blank">
+                                <i class="far fa-fw fa-comment" aria-hidden="true"></i>
+                                <span>[ Matrix ]</span>
+                            </a>
+                        </li>
+
+                        <li class="dropdown-item">
+                            <a href="https://github.com/modenero/telr.exchange" target="_blank">
+                                <i class="fab fa-fw fa-github" aria-hidden="true"></i>
+                                GitHub
+                            </a>
+                        </li>
+
                     </ul>
                 </li>
             </ul>
@@ -146,6 +205,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title text-info" id="loadMoreModalLabel">Coins &amp; Tokens</h5>
+
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -157,6 +217,7 @@
                             <li class="dropdown-item btn text-primary">
                                 HonestCoin <small><small class="text-muted">[ <span class="text-primary">USDH</span> ]</small></small>
                             </li>
+
                             <li class="dropdown-item btn text-primary">
                                 Spice <small><small class="text-muted">[ <span class="text-primary">SPICE</span> ]</small></small>
                             </li>
@@ -177,17 +238,16 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title text-info" id="customAssetModalLabel">Custom Assets</h5>
+
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
 
                     <div class="modal-body">
-
                         <p class="text-secondary">
                             Adding a custom asset for trading is very simple.
                         </p>
-
                     </div>
 
                     <div class="modal-footer">
@@ -203,13 +263,13 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title text-info" id="mobileModalLabel">Mobile Support</h5>
+
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
 
                     <div class="modal-body">
-
                         <p class="text-secondary">
                             TelrExchange is <strong>NOT</strong> currently optimized for phones and tablets.
                             Our team is working hard to make this availalbe soonish'.
@@ -218,7 +278,6 @@
                         <p class="text-secondary">
                             We currently recommend that you use a desktop browser like <strong>Brave or Chrome,</strong> with the <strong>Badger or MetaMask</strong> plugin.
                         </p>
-
                     </div>
 
                     <div class="modal-footer">
@@ -253,12 +312,12 @@ export default {
             //
         }),
 
-        connectMetamask() {
-            console.log('TODO: connect metamast')
+        connectBadger() {
+            console.log('TODO: connect Badger')
         },
 
-        signTrade() {
-            console.log('TODO: sign trade')
+        connectMetamask() {
+            console.log('TODO: connect MetaMask')
         },
 
     },

@@ -4,13 +4,16 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
-      profileAddress: 'n/a',
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
+    state: {
+        profileAddress: 'Satoshi#100',
+    },
+    mutations: {
+        //
+    },
+    actions: {
+        //
+    },
+    modules: {
+        //
+    }
 })
